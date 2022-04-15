@@ -33,4 +33,7 @@ contract Attack{
     function balanceOf(address addr) public view returns(uint256) {
         return address(this).balance;
     }
+    function withDrawFounds() public payable{
+        payable(msg.sender).transfer(address(this).balance);
+    }
 }
